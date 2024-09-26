@@ -1,0 +1,20 @@
+html,body,div,p{
+  margin: 0;
+  padding: 0;
+}
+
+div{
+  position: relative;
+  margin: 14px;
+}
+
+#photo{
+  position: absolute;
+}
+
+.box1{
+  width: 150px;
+  height: 150px;
+  background-color:red;
+  margin-top: 35px;
+}

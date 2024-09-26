@@ -1,0 +1,173 @@
+html,body,div,nav,ul,li{
+  margin: 0;
+  padding: 0;
+}
+
+#header{
+  background-color: white;
+  padding: 10px;
+}
+
+.nav-menu,.nav-sns{
+  display: none;
+  list-style: none;
+}
+
+.toggle_btn {
+  position: absolute;
+  top: 32px;
+  right:32px;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  z-index: 10;
+}
+.toggle_btn span {
+  /*3本の線を作る*/
+  transition: all .3s;
+  position: absolute;
+  height: 2px;
+  background-color: #333;
+  width:100%;
+  z-index: 10;
+}
+.toggle_btn span:nth-of-type(1) {
+  /*上の線の位置*/
+  top: 4px;
+}
+.toggle_btn span:nth-of-type(2) {
+  /*真ん中の線の位置*/
+  top: 12px;
+}
+.toggle_btn span:nth-of-type(3) {
+  /*下の線の位置*/
+  top: 20px;
+}
+.toggle_btn.open span:nth-of-type(1) {
+  /*openのとき、上の線を右斜めにする*/
+  top: 10px;
+  transform: translateY(6px) rotate(-33deg);
+}
+.toggle_btn.open span:nth-of-type(2) {
+  /*真ん中の線を消す*/
+  opacity: 0;
+}
+.toggle_btn.open span:nth-of-type(3) {
+  /*下の線を左斜めにする*/
+  top: 22px;
+  transform: translateY(-6px) rotate(33deg);
+}
+
+video{
+  width: 100%;
+}
+
+
+.slick-area li {
+  width: 100px;
+  padding: 20px;
+}
+
+.slick-area li img{
+  width: 100%;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item{
+  width: calc(100%/4);
+  margin: 0 15px 0;
+  box-shadow: inset;
+  border-radius: 3px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  margin-bottom: 50px;
+}
+
+.item img{
+  width: 100%;
+}
+
+.item-content{
+  padding: 10px;
+}
+
+.item-cat,.item-text{
+  padding: 10px;
+}
+
+.item-date{
+  padding: 10px;
+  text-align: right;
+}
+
+#contact{
+  background-color: #000;
+  color: #fff;
+  padding-bottom: 60px;
+}
+
+.content{
+  display: flex;
+}
+
+.contact-info{
+  padding: 0 40px;
+  width: calc(100%/2);
+}
+
+.contact-form{
+  padding: 0 40px;
+  width: calc(100%/2);
+}
+
+input,textarea{
+  background-color: #fff;
+  width: 100%;
+}
+
+.button input{
+  border: 2px white solid;
+  background-color: #000;
+  color: #fff;
+  border: #fff solid;
+  width: auto;
+  padding: 0 10px 0;
+}
+
+.sec-title{
+  padding: 50px;
+  text-align: center;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  .grid{
+    display: block;
+  }
+
+  .item{
+    width: auto;
+  }
+
+  .content{
+    display: block;
+  }
+
+  .contact-info{
+    width: 100%;
+  }
+  
+  .contact-form{
+    width: 100%;
+  }
+}

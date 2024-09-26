@@ -1,0 +1,35 @@
+.container {
+  padding: 20px;
+}
+.tab {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.tab li {
+  width: 33%;
+  font-weight: bold;
+  padding: 20px;
+  border: 2px solid #000;
+  border-bottom: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.tab li.active {
+  background: #ccc;
+}
+.content {
+  padding: 20px;
+  border: 2px solid #000;
+}
+.content li {
+  display: none;
+}
+.content li p {
+  background: #ccc;
+  padding: 20px;
+  margin: 10px 0;
+}
+.content li.active {
+  display: block;
+}
