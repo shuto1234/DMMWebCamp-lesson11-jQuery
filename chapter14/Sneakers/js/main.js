@@ -8,8 +8,8 @@ $(function () {
   // ページ内リンクのイベント
   $('a[href^="#"]').click(function () {
     // ハンバーガーメニューを閉じる
-    // $(".menu-btn").removeClass("open");
-    // $(".header_nav").removeClass("open");
+    $(".toggle_btn").removeClass("open");
+    $(".nav-menu,.nav-sns").removeClass();
 
     // 各aタグに指定されたhref属性を取得する
     var href = $(this).attr("href");
