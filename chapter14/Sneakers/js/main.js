@@ -5,21 +5,31 @@ $(function () {
     $(".toggle_btn").toggleClass("open");
     $(".nav-menu,.nav-sns").slideToggle();
   });
+  
   // ページ内リンクのイベント
   $('a[href^="#"]').click(function () {
     // ハンバーガーメニューを閉じる
-    $(".toggle_btn").removeClass("open");
-    $(".nav-menu,.nav-sns").removeClass();
+    // $(".toggle_btn").removeClass("open");
+    // $(".nav-menu,.nav-sns").removeClass();
+    $("#pickup").on('click',function(){
+      $('.toggle_btn').toggleClass("open");
+      $(".nav-menu,.nav-sns").slideToggle();
+    });
+
+    // スクロールスピード
+    let speed = 800;
 
     // 各aタグに指定されたhref属性を取得する
-    var href = $(this).attr("href");
+    let href = $(this).attr("href");
 
-    // href属性で指定された要素(各section要素)をセレクタで指定し、位置を取得する
+    let target = $(href == "#" || href == "" ? 'html':href);
+
     // ※offset()メソッドはtop,leftをプロパティに持つオブジェクトを返す
-    var pos = $(href).offset().top;
+    // let position = $(href).offset().top;
+    let position = target.offset().top;
 
     // 取得した位置へ1秒でアニメーションスクロールする
-    $("body,html").animate({ scrollTop: pos }, 1000);
+    $("body,html").animate({ scrollTop: position }, speed, 'swing');
 
     // aタグのデフォルト動作(画面遷移)を取り消す
     return false;
