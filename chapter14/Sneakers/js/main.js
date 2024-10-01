@@ -1,10 +1,14 @@
 $(function () {
 
-  // ハンバーガーメニューのクリックイベント
-  $(".toggle_btn").on('click',function(){
-    $(".toggle_btn").toggleClass("open");
-    $(".nav-menu,.nav-sns").slideToggle();
-  });
+  // // ハンバーガーメニューのクリックイベント
+  // $(".toggle_btn").on('click',function(){
+  //   $(".toggle_btn").toggleClass("open");
+  //   $(".nav-menu,.nav-sns").slideToggle();
+  // });
+
+  document.getElementById(".toggle_btn").onclick = function(){
+    document.querySelector('html').classList.toggle('open');
+  };
 
   // ページ内リンクのイベント
   $('a[href^="#"]').click(function () {

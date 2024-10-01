@@ -1,39 +1,45 @@
-html,body,div,nav,ul,li{
+html,
+body,
+div,
+nav,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
 
-#header{
+#header {
   background-color: white;
   padding: 10px;
 }
 
-nav{
-  position: absolute;
-  height: 1000px;
-  width: 40%;
-  /* left: -40px; */
+nav {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: -100%;
   top: 0;
-  background-color: #fff;
-  transition: .7s;
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: left 0.7s;
+  /* display: flex; */
+  justify-content: center;
 }
 
-nav ul{
-  display: none;
-  background-color: #000;
-  list-style-type: none;
+nav ul {
+  list-style: none;
+  padding-left: 50px;
 }
 
-nav ul a{
+nav ul a {
   color: #fff;
   text-decoration: none;
 }
 
-.nav-menu a{
+.nav-menu a {
   border-bottom: #fff solid 1px;
 }
 
-.toggle_btn {
+/* .toggle_btn {
   position: absolute;
   top: 32px;
   right:32px;
@@ -41,10 +47,56 @@ nav ul a{
   width: 32px;
   height: 24px;
   z-index: 10;
+} */
+
+.toggle_btn {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
 }
-.toggle_btn span {
+
+.toggle_btn::before,
+.toggle_btn::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #333333;
+  transform: translateY(10px);
+  transition: 0.3s ease-in-out;
+}
+
+.toggle_btn::before {
+  transform: translateY(-10px);
+  box-shadow: 0 10px #333333;
+}
+
+/* ナビゲーションボタン（閉じる） */
+.open .toggle_btn {
+  z-index: 100;
+}
+.open .toggle_btn::before {
+  transform: rotate(-45deg);
+  box-shadow: none;
+}
+.open .toggle_btn::after {
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+/* ナビゲーションメニュー 開いた時*/
+.open .nav {
+  left: 0;
+}
+
+/* .toggle_btn span {
   /*3本の線を作る*/
-  transition: all .3s;
+/* transition: all .3s;
   position: absolute;
   height: 2px;
   background-color: #333;
@@ -53,32 +105,32 @@ nav ul a{
 }
 .toggle_btn span:nth-of-type(1) {
   /*上の線の位置*/
-  top: 4px;
+/* top: 4px;
 }
 .toggle_btn span:nth-of-type(2) {
   /*真ん中の線の位置*/
-  top: 12px;
+/* top: 12px;
 }
 .toggle_btn span:nth-of-type(3) {
   /*下の線の位置*/
-  top: 20px;
-}
-.toggle_btn.open span:nth-of-type(1) {
-  /*openのとき、上の線を右斜めにする*/
-  top: 10px;
-  transform: translateY(6px) rotate(-33deg);
-}
-.toggle_btn.open span:nth-of-type(2) {
-  /*真ん中の線を消す*/
-  opacity: 0;
-}
-.toggle_btn.open span:nth-of-type(3) {
-  /*下の線を左斜めにする*/
-  top: 22px;
-  transform: translateY(-6px) rotate(33deg);
-}
+/* top: 20px; */
+/* } */
+/* .toggle_btn.open span:nth-of-type(1) { */
+/* openのとき、上の線を右斜めにする*/
+/* top: 10px; */
+/* transform: translateY(6px) rotate(-33deg); */
+/* } */
+/* .toggle_btn.open span:nth-of-type(2) { */
+/*真ん中の線を消す*/
+/* opacity: 0; */
+/* } */
+/* .toggle_btn.open span:nth-of-type(3) { */
+/* 下の線を左斜めにする */
+/* top: 22px; */
+/* transform: translateY(-6px) rotate(33deg); */
+/* } */
 
-video{
+video {
   width: 100%;
 }
 
@@ -87,66 +139,68 @@ video{
   padding: 20px;
 }
 
-.slick-area li img{
+.slick-area li img {
   width: 100%;
 }
 
-.grid{
+.grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1%;
-  margin:0  50px 200px 50px ;
+  margin: 0 50px 200px 50px;
 }
 
-.item{
+.item {
   box-shadow: inset;
   border-radius: 3px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
-.item img{
+.item img {
   width: 100%;
 }
 
-.item-content{
+.item-content {
   padding: 10px;
 }
 
-.item-cat,.item-text{
+.item-cat,
+.item-text {
   padding: 10px;
 }
 
-.item-date{
+.item-date {
   padding: 10px;
   text-align: right;
 }
 
-#contact{
+#contact {
   background-color: #000;
   color: #fff;
   padding-bottom: 60px;
 }
 
-.content{
+.content {
   display: flex;
 }
 
-.contact-info{
+.contact-info {
   padding: 0 40px;
-  width: calc(100%/2);
+  width: calc(100% / 2);
 }
 
-.contact-form{
+.contact-form {
   padding: 0 40px;
-  width: calc(100%/2);
+  width: calc(100% / 2);
 }
 
-input,textarea{
+input,
+textarea {
   background-color: #fff;
   width: 100%;
 }
 
-.button input{
+.button input {
   border: 2px white solid;
   background-color: #000;
   color: #fff;
@@ -155,38 +209,38 @@ input,textarea{
   padding: 0 10px 0;
 }
 
-.sec-title{
+.sec-title {
   padding: 50px;
   text-align: center;
 }
 
-footer{
+footer {
   background-color: black;
   color: white;
   text-align: center;
 }
 
 @media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
-  .grid{
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .grid {
     display: block;
     margin: 20px;
   }
 
-  .item{
+  .item {
     width: auto;
     margin: 10px;
   }
 
-  .content{
+  .content {
     display: block;
   }
 
-  .contact-info{
+  .contact-info {
     width: 100%;
   }
-  
-  .contact-form{
+
+  .contact-form {
     width: 100%;
   }
 }
