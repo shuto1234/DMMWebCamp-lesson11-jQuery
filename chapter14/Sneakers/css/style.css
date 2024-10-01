@@ -8,9 +8,29 @@ html,body,div,nav,ul,li{
   padding: 10px;
 }
 
-.nav-menu,.nav-sns{
+nav{
+  position: absolute;
+  height: 1000px;
+  width: 40%;
+  /* left: -40px; */
+  top: 0;
+  background-color: #fff;
+  transition: .7s;
+}
+
+nav ul{
   display: none;
-  list-style: none;
+  background-color: #000;
+  list-style-type: none;
+}
+
+nav ul a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-menu a{
+  border-bottom: #fff solid 1px;
 }
 
 .toggle_btn {

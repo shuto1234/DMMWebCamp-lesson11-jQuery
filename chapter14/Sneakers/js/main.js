@@ -5,7 +5,7 @@ $(function () {
     $(".toggle_btn").toggleClass("open");
     $(".nav-menu,.nav-sns").slideToggle();
   });
-  
+
   // ページ内リンクのイベント
   $('a[href^="#"]').click(function () {
     // ハンバーガーメニューを閉じる
