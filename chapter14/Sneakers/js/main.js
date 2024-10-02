@@ -3,7 +3,7 @@ $(function () {
   // ハンバーガーメニューのクリックイベント
   $(".toggle_btn").on('click',function(){
     $(".toggle_btn").toggleClass("open");
-    $(".nav-menu,.nav-sns").slideToggle();
+    $("#navi").toggleClass('in');
   });
   
   // ページ内リンクのイベント
